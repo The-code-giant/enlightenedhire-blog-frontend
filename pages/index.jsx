@@ -2,7 +2,7 @@
 import Header from 'components/Header'
 import List from 'components/List'
 import { BASE_URL } from 'constants/common'
-import Posts from 'mockData/Post'
+import posts from 'mockData/Post'
 export default function Home({posts = []}) {
   console.log(posts)
   return (
