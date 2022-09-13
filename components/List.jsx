@@ -17,7 +17,7 @@ export default function List({posts}) {
         </div>
         <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
-         		<Card {...post}/>
+         		<Card key={post.title}{...post}/>
           ))}
         </div>
       </div>
