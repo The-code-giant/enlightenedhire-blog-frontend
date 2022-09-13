@@ -13,7 +13,7 @@ export default function Home({posts = []}) {
 }
 
 export const getServerSideProps = async (context) => {
-  const posts = await fetch(`${BASE_URL}/api/articles`).then(res => res.json())
+  const posts = await fetch(`${BASE_URL}api/articles`).then(res => res.json())
   return {
     props: {
       posts
