@@ -2,7 +2,7 @@ import Header from "components/Header";
 import { NextSeo } from 'next-seo';
 import Image from 'next/future/image'
 import { BASE_URL } from 'constants/common'
-
+import posts from 'mockData/Post'
 const css = { maxWidth: '100%', height: 'auto' }
 const Article = ({ post }) => {
   return (
@@ -26,10 +26,11 @@ const Article = ({ post }) => {
 };
 
 export async function getStaticProps(context) {
-  const res = await fetch(
-    `${BASE_URL}api/articles/${context.params.slug}`
-  );
-  const post = await res.json();
+  // const res = await fetch(
+  //   `${BASE_URL}api/articles/${context.params.slug}`
+  // );
+  // const post = await res.json();
+  const post = posts.find(post => post.slug === context.params.slug)
   console.log({post});
   return {
     props: {
@@ -42,9 +43,9 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   
-  const res = await fetch(`${BASE_URL}api/articles`)
-  const posts = await res.json()
-  console.log({posts})
+  // const res = await fetch(`${BASE_URL}api/articles`)
+  // const posts = await res.json()
+  // console.log({posts})
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));
