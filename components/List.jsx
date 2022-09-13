@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import Card from '../components/Card'
+import Card from './Card'
 
 
 export default function List({posts}) {

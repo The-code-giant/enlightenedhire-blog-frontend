@@ -1,4 +1,4 @@
-const Card = ({category, title, imageUrl, description, author, datetime, date, readingTime, slug,}) => {
+const Card = ({ category, title, imageUrl, description, author, datetime, date, readingTime, slug }) => {
     return (
         <div key={title} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
         <div className="flex-shrink-0">

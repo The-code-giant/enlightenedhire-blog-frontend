@@ -1,7 +1,7 @@
-import Header from "../../components/Header";
+import Header from "components/Header";
 import { NextSeo } from 'next-seo';
 import Image from 'next/future/image'
-import { BASE_URL } from '../../constants/common'
+import { BASE_URL } from 'constants/common'
 
 const css = { maxWidth: '100%', height: 'auto' }
 const Article = ({ post }) => {

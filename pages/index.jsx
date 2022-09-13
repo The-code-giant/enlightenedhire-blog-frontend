@@ -1,7 +1,7 @@
 
-import Header from '../components/Header'
-import List from '../components/List'
-import { BASE_URL } from '../constants/common'
+import Header from 'components/Header'
+import List from 'components/List'
+import { BASE_URL } from 'constants/common'
 export default function Home({posts = []}) {
   console.log(posts)
   return (
