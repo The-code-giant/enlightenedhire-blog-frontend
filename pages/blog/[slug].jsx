@@ -26,12 +26,11 @@ const Article = ({ post }) => {
 };
 
 export async function getStaticProps(context) {
-  console.log(context);
   const res = await fetch(
     `${BASE_URL}/api/articles/${context.params.slug}`
   );
   const post = await res.json();
-  console.log(post);
+  console.log({post});
   return {
     props: {
       post,
@@ -44,8 +43,8 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   
   const posts = await fetch(`${BASE_URL}/api/articles`)
-    .then((res) => res.json());
-
+    .then(async (res) => await res.json());
+  console.log({posts})
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));
