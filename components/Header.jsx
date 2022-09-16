@@ -1,6 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
+import Link from 'next/link'
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
@@ -10,7 +11,7 @@ const navigation = [
   { name: "How To", href: "/blog/how-to" },
 ];
 
-export default function Header({showMainSection}) {
+export default function Header({ showMainSection }) {
   return (
     <div className="relative overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl">
@@ -43,13 +44,14 @@ export default function Header({showMainSection}) {
                 </div>
                 <div className="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
                   {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="font-medium text-gray-500 hover:text-gray-900"
-                    >
-                      {item.name}
-                    </a>
+                    <Link key={item.name} href={item.href}>
+                      <a
+                        href={item.href}
+                        className="font-medium text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </Link>
                   ))}
                   <a
                     href="#"

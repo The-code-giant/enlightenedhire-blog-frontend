@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Card = ({ category, title, imageUrl, description, author, datetime, date, readingTime, slug }) => {
     return (
         <div key={title} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
@@ -11,10 +13,12 @@ const Card = ({ category, title, imageUrl, description, author, datetime, date, 
                 {category.name}
               </a>
             </p>
-            <a href={`/blog/${slug}`} className="mt-2 block">
+            <Link href={`/blog/${slug}`}>
+            <a  className="mt-2 block">
               <p className="text-xl font-semibold text-gray-900">{title}</p>
               <p className="mt-3 text-base text-gray-500">{description}</p>
             </a>
+            </Link>
           </div>
           <div className="mt-6 flex items-center">
             <div className="flex-shrink-0">

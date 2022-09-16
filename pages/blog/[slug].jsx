@@ -6,7 +6,7 @@ import posts from 'mockData/Post'
 const css = { maxWidth: '100%', height: 'auto' }
 const Article = ({ post }) => {
   return (
-    <div>
+    <div className="bg-white">
       <NextSeo
        title={post.title}
        description={post.description}

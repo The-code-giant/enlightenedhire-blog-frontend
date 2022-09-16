@@ -6,7 +6,7 @@ import posts from 'mockData/Post'
 export default function Home({posts = []}) {
   console.log(posts)
   return (
-    <div>
+    <div className='dark'>
       <Header showMainSection={true}/>
       <List posts={posts}/>
     </div>
