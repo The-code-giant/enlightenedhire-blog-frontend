@@ -10,10 +10,10 @@ const PageTransition = ({children}) => {
         >
             <motion.div
                 key={router.route}
-                initial={{opacity: 0, y: 40}}
+                initial={{opacity: 0, y: 20}}
                 animate={{opacity: 1, y: 0}}
-                exit={{opacity:0, y: 40}}
-                transition={0.5}
+                exit={{opacity:0, y: 20}}
+                transition={0.8}
             >
                 {children}
             </motion.div>
